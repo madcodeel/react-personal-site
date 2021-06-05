@@ -1,5 +1,5 @@
-import { Route } from 'react-router-dom'
 import './App.css';
+import { Route, withRouter } from 'react-router-dom';
 import Header from '../../components/header/header';
 import About from '../About/About';
 import Home from '../Home/Home';
@@ -11,6 +11,7 @@ function App() {
     <div className="App">
       <Header />
       <section>
+        <Route path="/home" exact component={Home}></Route>
         <Route path="/about" exact component={About}></Route>
         <Route path="/products" exact component={Products}></Route>
       </section>
@@ -21,4 +22,4 @@ function App() {
   );
 }
 
-export default App
+export default withRouter(App);
