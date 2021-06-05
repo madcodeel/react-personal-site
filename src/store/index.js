@@ -8,8 +8,8 @@ const Context = React.createContext({
     About: {
       url: '/about',
     },
-    Products: {
-      url: '/products',
+    Projects: {
+      url: '/projects',
     },
   },
   colors: {

@@ -6,7 +6,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import About from '../About/About';
 import Home from '../Home/Home';
-import Products from '../Products/Products';
+import projects from '../Projects/Projects';
 import Context from '../../store/index';
 
 function App() {
@@ -15,11 +15,9 @@ function App() {
     <ThemeProvider theme={context.colors}>
       <AppDom>
         <Header />
-        <section>
-          <Route path="/home" exact component={Home}></Route>
-          <Route path="/about" exact component={About}></Route>
-          <Route path="/products" exact component={Products}></Route>
-        </section>
+        <Route path="/home" exact component={Home}></Route>
+        <Route path="/about" exact component={About}></Route>
+        <Route path="/projects" exact component={projects}></Route>
         <Footer />
       </AppDom>
     </ThemeProvider>
