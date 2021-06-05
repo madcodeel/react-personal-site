@@ -1,36 +1,46 @@
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import logo from '../../assets/images/logo.svg'
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Container from '../Container/Container';
+import Context from '../../store/index';
 
-const HeaderLogo = styled.div`
-  position: relative;
-  width: 80px;
-  > img {
-    display: block;
-    max-width: 100%;
-  }
-`
+function Header() {
+  const context = useContext(Context);
+  return (
+    <HeaderDom className="header">
+      <Container>
+        <HeaderContent>
+          {
+            Object.keys(context.routes).map((key) => <HeaderContentItem key={`head-item-${key}`}><Link to={context.routes[key].url}>{key}</Link></HeaderContentItem>)
+          }
+        </HeaderContent>
+      </Container>
+    </HeaderDom>
+  );
+}
 
 const HeaderDom = styled.header`
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
-`
+  padding: 20px 0;
+`;
 
-function Header() {
-  return (
-    <HeaderDom className="header">
-      <Link to="/" class="header__logo">
-        <HeaderLogo><img src={logo} alt="logo" /></HeaderLogo>
-      </Link>
-      <div>
-        <Link to="/about" class="header__logo">About</Link>
-        <Link to="/products" class="header__logo">Products</Link>
-      </div>
-    </HeaderDom>
-  )
-}
+const HeaderContent = styled.div`
+  flex: 0 0 auto;
+  display: flex;
+`;
 
-export default Header
+const HeaderContentItem = styled.div`
+  flex: 0 0 auto;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: .47px;
+  & + & {
+    margin-left: 40px;
+  }
+`;
+
+export default Header;
