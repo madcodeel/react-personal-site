@@ -1,0 +1,47 @@
+[
+  {
+    "date": {
+      "start": "2020.03",
+      "end": "2021.03"
+    },
+    "company": "Blockstudio",
+    "companyUrl": "https://blockstudio.tw",
+    "title": "Develop Manager"
+  },
+  {
+    "date": {
+      "start": "2019.01",
+      "end": "2021.03"
+    },
+    "company": "Blockstudio",
+    "companyUrl": "https://blockstudio.tw",
+    "title": "Front-End Developer"
+  },
+  {
+    "date": {
+      "start": "2018.09",
+      "end": "2019.01"
+    },
+    "company": "TenTen.creative",
+    "companyUrl": "https://tenten.co/zh",
+    "title": "Junior Front-End Developer"
+  },
+  {
+    "date": {
+      "start": "2017.02",
+      "end": "2018.09"
+    },
+    "company": "E-creative",
+    "companyUrl": "https://minmax.tw/",
+    "title": "Front-End Developer"
+  },
+  {
+    "date": {
+      "start": "2012.09",
+      "end": "2016.06"
+    },
+    "company": "National Taichung University of science and technology",
+    "companyUrl": "https://www.nutc.edu.tw/bin/home.php",
+    "title": "bachelor of Information management"
+  }
+]
