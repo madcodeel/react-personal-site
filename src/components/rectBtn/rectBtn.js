@@ -3,7 +3,7 @@
 function rectBtn() {
   return (
     <button className="rect-btn">123</button>
-  )
+  );
 }
 
-export default rectBtn
+export default rectBtn;
