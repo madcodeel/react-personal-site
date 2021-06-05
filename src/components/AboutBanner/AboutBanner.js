@@ -9,7 +9,7 @@ function AboutBanner(props) {
 
   useEffect(() => {
     setIsMount(true);
-  });
+  }, []);
 
   return (
     <ThemeProvider theme={context.colors}>
