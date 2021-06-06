@@ -11,7 +11,7 @@ function Home() {
 
   useEffect(() => {
     if (!state.projects || state.projects.length <= 0) { fetchProjects(); }
-  }, []);
+  }, [fetchProjects, state]);
 
   useEffect(() => {
     console.log(state);

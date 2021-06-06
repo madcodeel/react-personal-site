@@ -1,11 +1,15 @@
 import { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
+
+// hooks
+import useProjects from '../../hook/useProjects';
+import { StateContext } from '../../store/index';
+
+// components
 import ProjectsBanner from '../../components/ProjectsBanner/ProjectsBanner';
 import Container from '../../components/Container/Container';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import ProjectModal from '../../components/ProjectModal/ProjectModal';
-import useProjects from '../../hook/useProjects';
-import { StateContext } from '../../store/index';
 
 function Projects() {
   const [showProjectDetail, setShowProjectDetail] = useState(false);
@@ -15,7 +19,7 @@ function Projects() {
 
   useEffect(() => {
     if (!state.projects || state.projects.length <= 0) { fetchProjects(); }
-  }, []);
+  }, [fetchProjects, state]);
 
   const clickProject = (data) => {
     setShowProjectDetail(true);
