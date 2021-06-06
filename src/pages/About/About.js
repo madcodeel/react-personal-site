@@ -1,6 +1,11 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useContext, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
+
+// hooks
+import useAbout from '../../hook/useAbout';
+import { StateContext } from '../../store/index';
+
+// components
 import AboutBanner from '../../components/AboutBanner/AboutBanner';
 import Container from '../../components/Container/Container';
 import Memorabilia from '../../components/Memorabilia/Memorabilia';
@@ -9,24 +14,26 @@ import Paragraph from '../../components/Text/Paragraph';
 import HeadSticker from '../../components/HeadSticker/HeadSticker';
 
 function About() {
-  const [experience, setExperience] = useState(null);
-  const [pageData, setPageData] = useState(null);
+  const [state] = useContext(StateContext);
+  const { fetchAbout } = useAbout();
 
   useEffect(() => {
-    const getExperience = axios.get('/json/experience.json');
-    const getPageData = axios.get('/json/page-about.json');
+    if (!state.about) { fetchAbout(); }
+  }, [fetchAbout, state]);
 
-    axios.all([getExperience, getPageData])
-      .then((res) => {
-        const resExperience = res[0].data;
-        const resPageData = res[1].data;
-        setExperience(resExperience);
-        setPageData(resPageData);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  const experience = useMemo(() => {
+    if (state.about) {
+      return state.about.experience;
+    }
+    return null;
+  }, [state]);
+
+  const pageData = useMemo(() => {
+    if (state.about) {
+      return state.about.pageData;
+    }
+    return null;
+  }, [state]);
 
   return (
     <Container>
