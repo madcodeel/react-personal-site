@@ -3,13 +3,13 @@
     "name": "Artilux",
     "link": "https://www.artiluxtech.com/",
     "img": {
-      "thumb": "",
-      "cover": ""
+      "thumb": "https://source.unsplash.com/random/300x400",
+      "cover": "https://source.unsplash.com/random/1024x768"
     },
     "credit": [
       {
         "title": "Company",
-        "text": "Block studio",
+        "text": "Blockstudio",
         "url": "https://blockstudio.tw/"
       },
       {
@@ -38,7 +38,7 @@
       },
       {
         "title": "Awards",
-        "text": "Designawards",
+        "text": "Design Awards",
         "url": "https://www.designawards.asia/tc/artilux-official-website"
       },
       {
@@ -51,13 +51,13 @@
     "name": "高雄流行音樂中心",
     "link": "https://www.kpmc.com.tw/",
     "img": {
-      "thumb": "",
-      "cover": ""
+      "thumb": "https://source.unsplash.com/random/300x400",
+      "cover": "https://source.unsplash.com/random/1024x768"
     },
     "credit": [
       {
         "title": "Company",
-        "text": "Block studio",
+        "text": "Blockstudio",
         "url": "https://blockstudio.tw/"
       },
       {
@@ -127,8 +127,8 @@
     "name": "Hububble",
     "link": "https://www.hububble.co/",
     "img": {
-      "thumb": "",
-      "cover": ""
+      "thumb": "https://source.unsplash.com/random/300x400",
+      "cover": "https://source.unsplash.com/random/1024x768"
     },
     "credit": [
       {
@@ -149,13 +149,13 @@
     "name": "桃園土地公文化館",
     "link": "http://www.taoyuantudigong.org.tw/",
     "img": {
-      "thumb": "",
-      "cover": ""
+      "thumb": "https://source.unsplash.com/random/300x400",
+      "cover": "https://source.unsplash.com/random/1024x768"
     },
     "credit": [
       {
         "title": "Company",
-        "text": "Block studio",
+        "text": "Blockstudio",
         "url": "https://blockstudio.tw"
       },
       {
@@ -188,8 +188,8 @@
     "name": "台灣設計力調查",
     "link": "https://designsurvey.org.tw/",
     "img": {
-      "thumb": "",
-      "cover": ""
+      "thumb": "https://source.unsplash.com/random/300x400",
+      "cover": "https://source.unsplash.com/random/1024x768"
     },
     "credit": [
       {
@@ -234,8 +234,8 @@
     "name": "實踐大學 入學服務中心",
     "link": "https://admission.usc.edu.tw/",
     "img": {
-      "thumb": "",
-      "cover": ""
+      "thumb": "https://source.unsplash.com/random/300x400",
+      "cover": "https://source.unsplash.com/random/1024x768"
     },
     "credit": [
       {
@@ -268,8 +268,8 @@
     "name": "空總臺灣當代文化實驗場C-LAB",
     "link": "https://clab.org.tw/",
     "img": {
-      "thumb": "",
-      "cover": ""
+      "thumb": "https://source.unsplash.com/random/300x400",
+      "cover": "https://source.unsplash.com/random/1024x768"
     },
     "credit": [
       {
@@ -314,8 +314,8 @@
     "name": "雨林新零售",
     "link": "https://www.rainforestretail.com.tw/",
     "img": {
-      "thumb": "",
-      "cover": ""
+      "thumb": "https://source.unsplash.com/random/300x400",
+      "cover": "https://source.unsplash.com/random/1024x768"
     },
     "credit": [
       {
@@ -352,8 +352,8 @@
     "name": "版塊4.0 入厝趴",
     "link": "https://opening4.blockstudio.tw/",
     "img": {
-      "thumb": "",
-      "cover": ""
+      "thumb": "https://source.unsplash.com/random/300x400",
+      "cover": "https://source.unsplash.com/random/1024x768"
     },
     "credit": [
       {
@@ -418,8 +418,8 @@
     "name": "遊戲橘子 ─ GAMA25週年線上展",
     "link": null,
     "img": {
-      "thumb": "",
-      "cover": ""
+      "thumb": "https://source.unsplash.com/random/300x400",
+      "cover": "https://source.unsplash.com/random/1024x768"
     },
     "credit": [
       {
