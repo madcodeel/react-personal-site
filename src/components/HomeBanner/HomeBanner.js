@@ -1,9 +1,7 @@
-import { useContext, useState, useEffect } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import Context from '../../store/index';
+import { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
 function AboutBanner(props) {
-  const context = useContext(Context);
   const [isMount, setIsMount] = useState(false);
 
   useEffect(() => {
@@ -11,15 +9,13 @@ function AboutBanner(props) {
   }, []);
 
   return (
-    <ThemeProvider theme={context.colors}>
-      <Wrapper className={isMount && '-active'}>
-        <Main>
-          <TextWrapper padding={props.textPadding}>
-            <Text>{props.text}</Text>
-          </TextWrapper>
-        </Main>
-      </Wrapper>
-    </ThemeProvider>
+    <Wrapper className={isMount && '-active'}>
+      <Main>
+        <TextWrapper padding={props.textPadding}>
+          <Text>{props.text}</Text>
+        </TextWrapper>
+      </Main>
+    </Wrapper>
   );
 }
 

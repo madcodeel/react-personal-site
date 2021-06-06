@@ -1,6 +1,8 @@
-import React from 'react';
+import { useState, createContext } from 'react';
 
-const Context = React.createContext({
+export const StateContext = createContext();
+
+export const InitContextState = () => useState({
   routes: {
     Home: {
       url: '/home',
@@ -12,6 +14,7 @@ const Context = React.createContext({
       url: '/projects',
     },
   },
+  projects: [],
   colors: {
     main: '#054e62',
     sub: '#197890',
@@ -21,5 +24,3 @@ const Context = React.createContext({
   loading: false,
   name: 'leo',
 });
-
-export default Context;

@@ -1,8 +1,7 @@
-import { useContext } from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import Container from '../Container/Container';
-import Context from '../../store/index';
+import { StateContext } from '../../store/index';
 
 function HeaderItem({ label, to, isMatch }) {
   const match = useRouteMatch({
@@ -19,23 +18,28 @@ function HeaderItem({ label, to, isMatch }) {
 }
 
 function Header() {
-  const context = useContext(Context);
   return (
-    <ThemeProvider theme={context.colors}>
-      <HeaderDom className="header">
-        <Container>
-          <HeaderContent>
-            {
-              Object.keys(context.routes).map((key) => <HeaderItem
-                key={`head-item-${key}`}
-                to={context.routes[key].url}
-                label={key}
-              />)
-            }
-          </HeaderContent>
-        </Container>
-      </HeaderDom>
-    </ThemeProvider>
+    <StateContext.Consumer>
+      {
+        (value) => {
+          const state = value[0];
+          return (
+            <HeaderDom className="header">
+              <Container>
+                <HeaderContent>
+                  {
+                    Object.keys(state.routes).map((key) => <HeaderItem
+                      key={`head-item-${key}`}
+                      to={state.routes[key].url}
+                      label={key}
+                    />)
+                  }
+                </HeaderContent>
+              </Container>
+            </HeaderDom>);
+        }
+      }
+    </StateContext.Consumer>
   );
 }
 

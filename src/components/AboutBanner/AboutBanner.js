@@ -1,10 +1,8 @@
-import { useContext, useState, useEffect } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import Container from '../Container/Container';
-import Context from '../../store/index';
 
 function AboutBanner(props) {
-  const context = useContext(Context);
   const [isMount, setIsMount] = useState(false);
 
   useEffect(() => {
@@ -12,17 +10,15 @@ function AboutBanner(props) {
   }, []);
 
   return (
-    <ThemeProvider theme={context.colors}>
-      <Container>
-        <Wrapper className={isMount && '-active'}>
-          <Main>
-            <TextWrapper padding={props.textPadding ? props.textPadding : '0 0 40px 45%'}>
-              <Text>{props.text}</Text>
-            </TextWrapper>
-          </Main>
-        </Wrapper>
-      </Container>
-    </ThemeProvider>
+    <Container>
+      <Wrapper className={isMount && '-active'}>
+        <Main>
+          <TextWrapper padding={props.textPadding ? props.textPadding : '0 0 40px 45%'}>
+            <Text>{props.text}</Text>
+          </TextWrapper>
+        </Main>
+      </Wrapper>
+    </Container>
   );
 }
 

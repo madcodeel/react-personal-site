@@ -1,20 +1,15 @@
-import { useContext } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import Container from '../Container/Container';
-import Context from '../../store/index';
 
 function Footer() {
-  const context = useContext(Context);
   return (
-    <ThemeProvider theme={context.colors}>
-      <FooterDom>
-        <Container>
-          <FooterText>🤟🏻<br/>LET’S WORK TOGETHER,<br/>
-            <FooterTextHighlight as="a" href="mailto: madcode.el@gmail.com"><span>GET IN TOUCH</span></FooterTextHighlight>
-          </FooterText>
-        </Container>
-      </FooterDom>
-    </ThemeProvider>
+    <FooterDom>
+      <Container>
+        <FooterText>🤟🏻<br/>LET’S WORK TOGETHER,<br/>
+          <FooterTextHighlight as="a" href="mailto: madcode.el@gmail.com"><span>GET IN TOUCH</span></FooterTextHighlight>
+        </FooterText>
+      </Container>
+    </FooterDom>
   );
 }
 

@@ -1,35 +1,31 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import styled, { ThemeProvider } from 'styled-components';
-import Context from '../../store/index';
+import styled from 'styled-components';
 
 import Title from '../Text/Title';
 
 function Memorabilia(props) {
-  const context = useContext(Context);
-
   return (
-    <ThemeProvider theme={context.colors}>
-      <Wrapper>
-        {props.title && <Title color={context.colors.white} text={props.title} />}
-        <Main>
-          {
-            props.data && props.data.length > 0
-              ? props.data.map((record, i) => <React.Fragment key={`title-${i}`}>
-                <ListItemTitle >{record.date.start} - {record.date.end}</ListItemTitle>
-                <ListItemText>
-                  {
-                    record.companyUrl && record.companyUrl !== ''
-                      ? <ListItemTextLink as={Link} to={record.companyUrl}>{record.company}</ListItemTextLink>
-                      : record.company
-                  }, {record.title}
-                </ListItemText>
-              </React.Fragment>)
-              : null
-          }
-        </Main>
-      </Wrapper>
-    </ThemeProvider>
+    <Wrapper>
+      {props.title && <Title text={props.title} />}
+      <Main>
+        {
+          props.data && props.data.length > 0
+            ? props.data.map((record, i) => <React.Fragment key={`title-${i}`}>
+              <ListItemTitle >{record.date.start} - {record.date.end}</ListItemTitle>
+              <ListItemText>
+                {
+                  record.companyUrl && record.companyUrl !== ''
+                    ? <ListItemTextLink as={Link} to={record.companyUrl}>{record.company}</ListItemTextLink>
+                    : record.company
+                }, {record.title}
+              </ListItemText>
+            </React.Fragment>)
+            : null
+        }
+      </Main>
+    </Wrapper>
+
   );
 }
 
