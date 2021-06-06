@@ -18,7 +18,7 @@ function App() {
           <Header />
           <Route path="/home" exact component={Home}></Route>
           <Route path="/about" exact component={About}></Route>
-          <Route path="/projects" exact component={projects}></Route>
+          <Route path="/projects" component={projects}></Route>
           <Footer />
         </AppDom>
       </ThemeProvider>

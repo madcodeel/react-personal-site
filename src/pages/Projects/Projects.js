@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
+import { Route, Link, Redirect } from 'react-router-dom';
 
 // hooks
 import useProjects from '../../hook/useProjects';
@@ -11,15 +12,13 @@ import Container from '../../components/Container/Container';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import ProjectModal from '../../components/ProjectModal/ProjectModal';
 
-function Projects() {
+function Projects(props) {
   const [showProjectDetail, setShowProjectDetail] = useState(false);
+  const [isRedirect, setIsRedirect] = useState(false);
   const [projectDetail, setProjectDetail] = useState(null);
   const [state] = useContext(StateContext);
   const { fetchProjects } = useProjects();
-
-  useEffect(() => {
-    if (!state.projects || state.projects.length <= 0) { fetchProjects(); }
-  }, [fetchProjects, state]);
+  const pageProjectPath = state.routes.Projects.url;
 
   const clickProject = (data) => {
     setShowProjectDetail(true);
@@ -29,7 +28,29 @@ function Projects() {
   const closeModal = () => {
     setShowProjectDetail(false);
     setProjectDetail(null);
+    props.history.push(pageProjectPath);
   };
+
+  useEffect(() => {
+    if (!state.projects || state.projects.length <= 0) { fetchProjects(); }
+  }, [fetchProjects, state]);
+
+  useEffect(() => {
+    const pathArr = props.location.pathname.split('/');
+    let currentProjectIndex = -1;
+    if (pathArr[2] && state.projects) {
+      currentProjectIndex = state.projects.map((item) => item.name).indexOf(pathArr[2]);
+      if (currentProjectIndex !== -1) {
+        clickProject(state.projects[currentProjectIndex]);
+      } else {
+        setIsRedirect(true);
+      }
+    }
+  }, [state.projects, props, pageProjectPath]);
+
+  if (isRedirect) {
+    return <Redirect to={pageProjectPath} />;
+  }
 
   return (
     <div className="Projects">
@@ -43,11 +64,14 @@ function Projects() {
               <ProjectsWrapper>
                 {
                   state.projects.map((data) => (
-                    <ProjectCard
+                    <Link
+                      to={`${pageProjectPath}/${data.name}`}
                       key={`prjoect-${data.name}`}
-                      data={data}
-                      onClick={clickProject}
-                    />))
+                      onClick={() => { clickProject(data); }}
+                    >
+                      <ProjectCard data={data} />
+                    </Link>
+                  ))
                 }
               </ProjectsWrapper>
             )
@@ -55,10 +79,16 @@ function Projects() {
         }
         {
           (showProjectDetail && projectDetail)
-          && (<ProjectModal
-            data={projectDetail}
-            clickClose={closeModal}
-          />)
+          && (
+            <Route exact path={`${pageProjectPath}/:name`}
+              render={ () => (
+                <ProjectModal
+                  data={projectDetail}
+                  clickClose={closeModal}
+                />
+              )}
+            />
+          )
         }
       </Container>
     </div>

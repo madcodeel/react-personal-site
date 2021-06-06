@@ -1,16 +1,8 @@
-import { useCallback } from 'react';
 import styled from 'styled-components';
 
 function ProjectCard(props) {
-  const handleClick = useCallback(
-    () => {
-      props.onClick(props.data);
-    },
-    [props],
-  );
-
   return (
-    <Wrapper onClick={handleClick}>
+    <Wrapper>
       <ImgBox img={props.data.img.thumb} />
       <Title>{props.data.name}</Title>
     </Wrapper>
