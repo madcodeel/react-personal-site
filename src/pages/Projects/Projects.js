@@ -1,22 +1,31 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import ProjectsBanner from '../../components/ProjectsBanner/ProjectsBanner';
 import Container from '../../components/Container/Container';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import ProjectModal from '../../components/ProjectModal/ProjectModal';
+import useProjects from '../../hook/useProjects';
+import { StateContext } from '../../store/index';
 
 function Projects() {
-  const [projects, setProjects] = useState(null);
+  const [showProjectDetail, setShowProjectDetail] = useState(false);
+  const [projectDetail, setProjectDetail] = useState(null);
+  const [state] = useContext(StateContext);
+  const { fetchProjects } = useProjects();
+
   useEffect(() => {
-    axios.get('/json/projects.json')
-      .then((res) => {
-        console.log(res.data);
-        setProjects(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (!state.projects || state.projects.length <= 0) { fetchProjects(); }
   }, []);
+
+  const clickProject = (data) => {
+    setShowProjectDetail(true);
+    setProjectDetail(data);
+  };
+
+  const closeModal = () => {
+    setShowProjectDetail(false);
+    setProjectDetail(null);
+  };
 
   return (
     <div className="Projects">
@@ -25,15 +34,27 @@ function Projects() {
           text="Projects"
         ></ProjectsBanner>
         {
-          projects && projects.length > 0
+          state.projects && state.projects.length > 0
             ? (
               <ProjectsWrapper>
                 {
-                  projects.map((data) => <ProjectCard img={data.img.thumb} title={data.name} key={`prjoect-${data.name}`} />)
+                  state.projects.map((data) => (
+                    <ProjectCard
+                      key={`prjoect-${data.name}`}
+                      data={data}
+                      onClick={clickProject}
+                    />))
                 }
               </ProjectsWrapper>
             )
             : null
+        }
+        {
+          (showProjectDetail && projectDetail)
+          && (<ProjectModal
+            data={projectDetail}
+            clickClose={closeModal}
+          />)
         }
       </Container>
     </div>

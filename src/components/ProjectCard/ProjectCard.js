@@ -1,10 +1,18 @@
+import { useCallback } from 'react';
 import styled from 'styled-components';
 
 function ProjectCard(props) {
+  const handleClick = useCallback(
+    () => {
+      props.onClick(props.data);
+    },
+    [props.onClick, props.data],
+  );
+
   return (
-    <Wrapper>
-      <ImgBox img={props.img} />
-      <Title>{props.title}</Title>
+    <Wrapper onClick={handleClick}>
+      <ImgBox img={props.data.img.thumb} />
+      <Title>{props.data.name}</Title>
     </Wrapper>
   );
 }
@@ -29,7 +37,7 @@ const ImgBox = styled.div`
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #000;
-    background-image: url(${(props) => (props.img && props.img !== '' ? props.img : 'https://source.unsplash.com/random/1024x768')});
+    background-image: url(${(props) => ((props.img && props.img !== '') && props.img)});
     will-change: transform filter;
     filter: grayscale(0.8);
     transition: transform 0.5s ease-out, filter 0.5s linear;
