@@ -14,7 +14,6 @@ export const InitContextState = () => useState({
       url: '/projects',
     },
   },
-  projects: [],
   colors: {
     main: '#054e62',
     sub: '#197890',

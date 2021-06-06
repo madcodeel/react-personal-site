@@ -2,6 +2,8 @@
   {
     "name": "Artilux",
     "link": "https://www.artiluxtech.com/",
+    "feature": false,
+    "order": null,
     "img": {
       "thumb": "https://source.unsplash.com/random/300x400",
       "cover": "https://source.unsplash.com/random/1024x768"
@@ -50,6 +52,8 @@
   {
     "name": "高雄流行音樂中心",
     "link": "https://www.kpmc.com.tw/",
+    "feature": true,
+    "order": 1,
     "img": {
       "thumb": "https://source.unsplash.com/random/300x400",
       "cover": "https://source.unsplash.com/random/1024x768"
@@ -126,6 +130,8 @@
   {
     "name": "Hububble",
     "link": "https://www.hububble.co/",
+    "feature": false,
+    "order": null,
     "img": {
       "thumb": "https://source.unsplash.com/random/300x400",
       "cover": "https://source.unsplash.com/random/1024x768"
@@ -148,6 +154,8 @@
   {
     "name": "桃園土地公文化館",
     "link": "http://www.taoyuantudigong.org.tw/",
+    "feature": false,
+    "order": null,
     "img": {
       "thumb": "https://source.unsplash.com/random/300x400",
       "cover": "https://source.unsplash.com/random/1024x768"
@@ -187,6 +195,8 @@
   {
     "name": "台灣設計力調查",
     "link": "https://designsurvey.org.tw/",
+    "feature": true,
+    "order": null,
     "img": {
       "thumb": "https://source.unsplash.com/random/300x400",
       "cover": "https://source.unsplash.com/random/1024x768"
@@ -233,6 +243,8 @@
   {
     "name": "實踐大學 入學服務中心",
     "link": "https://admission.usc.edu.tw/",
+    "feature": false,
+    "order": null,
     "img": {
       "thumb": "https://source.unsplash.com/random/300x400",
       "cover": "https://source.unsplash.com/random/1024x768"
@@ -267,6 +279,8 @@
   {
     "name": "空總臺灣當代文化實驗場C-LAB",
     "link": "https://clab.org.tw/",
+    "feature": false,
+    "order": null,
     "img": {
       "thumb": "https://source.unsplash.com/random/300x400",
       "cover": "https://source.unsplash.com/random/1024x768"
@@ -313,6 +327,8 @@
   {
     "name": "雨林新零售",
     "link": "https://www.rainforestretail.com.tw/",
+    "feature": false,
+    "order": null,
     "img": {
       "thumb": "https://source.unsplash.com/random/300x400",
       "cover": "https://source.unsplash.com/random/1024x768"
@@ -351,6 +367,8 @@
   {
     "name": "版塊4.0 入厝趴",
     "link": "https://opening4.blockstudio.tw/",
+    "feature": false,
+    "order": null,
     "img": {
       "thumb": "https://source.unsplash.com/random/300x400",
       "cover": "https://source.unsplash.com/random/1024x768"
@@ -417,6 +435,8 @@
   {
     "name": "遊戲橘子 ─ GAMA25週年線上展",
     "link": null,
+    "feature": true,
+    "order": null,
     "img": {
       "thumb": "https://source.unsplash.com/random/300x400",
       "cover": "https://source.unsplash.com/random/1024x768"
