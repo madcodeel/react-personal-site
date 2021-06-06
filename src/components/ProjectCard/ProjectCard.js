@@ -6,7 +6,7 @@ function ProjectCard(props) {
     () => {
       props.onClick(props.data);
     },
-    [props.onClick, props.data],
+    [props],
   );
 
   return (
