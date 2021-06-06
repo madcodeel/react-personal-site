@@ -43,7 +43,7 @@ function Home() {
             && (featureProjects.map((item, i) => (
               <FeatureItem key={`feature-card-${item.name}`}
                 as={Link}
-                to={pageProjectPath}
+                to={`${pageProjectPath}/${item.name}`}
               >
                 <FeatureCard
                   img={item.img.thumb}
