@@ -73,12 +73,12 @@ const ListItemTextLink = styled.span`
     width: 100%;
     height: 2px;
     transition: height 0.3s;
-    background-color: ${(props) => props.theme.lightGreen};
+    background-color: ${(props) => props.theme.colors.lightGreen};
     z-index: -1;
   }
 
   &:hover {
-    color: ${(props) => props.theme.main};
+    color: ${(props) => props.theme.colors.main};
     &::before {
       height: 100%;
     }

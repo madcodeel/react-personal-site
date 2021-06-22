@@ -32,7 +32,7 @@ const Wrapper = styled.div`
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: ${(props) => props.theme.lightGreen};
+    background-color: ${(props) => props.theme.colors.lightGreen};
     transform-origin: left center;
     transform: scaleX(0);
     transition: transform 0.55s;
@@ -51,7 +51,7 @@ const Main = styled.div`
     display: block;
     width: 50%;
     height: 100px;
-    background-color: ${(props) => props.theme.main}
+    background-color: ${(props) => props.theme.colors.main}
   }
   &::before {
     left: 0;
@@ -80,7 +80,7 @@ const Text = styled.p`
   font-weight: 800;
   line-height: 1.21;
   letter-spacing: 1.3px;
-  color: ${(props) => props.theme.main};
+  color: ${(props) => props.theme.colors.main};
 `;
 
 export default AboutBanner;

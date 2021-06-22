@@ -9,7 +9,7 @@ const TitleDom = styled.h3`
   font-weight: 700;
   line-height: 1.33;
   letter-spacing: 1.2px;
-  color: ${(props) => (props.theme.color ? props.theme.color : '#fff')};
+  color: ${(props) => (props.theme.colors.color ? props.theme.colors.color : '#fff')};
   margin-bottom: 24px;
   text-transform: uppercase;
 `;

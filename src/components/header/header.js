@@ -65,7 +65,7 @@ const HeaderContentItem = styled.div`
   line-height: normal;
   letter-spacing: .47px;
   padding: 5px 0;
-  color: ${(props) => props.theme.white};
+  color: ${(props) => props.theme.colors.white};
   & + & {
     margin-left: 40px;
   }
@@ -77,12 +77,12 @@ const HeaderContentItem = styled.div`
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: ${(props) => props.theme.lightGreen};
+    background-color: ${(props) => props.theme.colors.lightGreen};
     opacity: 0;
     transition: opacity 0.2s;
   }
   &:hover {
-    color: ${(props) => props.theme.lightGreen}
+    color: ${(props) => props.theme.colors.lightGreen}
   }
   &.-active::after {
     opacity: 1;

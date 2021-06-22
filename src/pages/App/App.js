@@ -13,7 +13,7 @@ function App() {
 
   return (
     <StateContext.Provider value={state}>
-      <ThemeProvider theme={state[0].colors}>
+      <ThemeProvider theme={{ colors: state[0].colors }}>
         <AppDom>
           <Header />
           <Route path="/home" exact component={Home}></Route>
@@ -27,7 +27,7 @@ function App() {
 }
 
 const AppDom = styled.div`
-  background-color: ${(props) => props.theme.main};
+  background-color: ${(props) => props.theme.colors.main};
 `;
 
 export default withRouter(App);

@@ -15,7 +15,7 @@ function Footer() {
 
 const FooterDom = styled.footer`
   position: relative;
-  background-color: ${(props) => props.theme.sub};
+  background-color: ${(props) => props.theme.colors.sub};
   padding: 130px 0 185px;
   text-align: center;
 `;
@@ -45,7 +45,7 @@ const FooterTextHighlight = styled(FooterText)`
       position: absolute;
       left: 0;
       bottom: 0;
-      background-color: ${(props) => props.theme.lightGreen};
+      background-color: ${(props) => props.theme.colors.lightGreen};
       transition: height 0.3s ease;
     }
     &:hover::after {

@@ -10,7 +10,7 @@ const TitleDom = styled.p`
   font-weight: 400;
   line-height: 1.58;
   letter-spacing: .68px;
-  color: ${(props) => (props.theme.color ? props.theme.color : '#fff')};
+  color: ${(props) => (props.theme.colors.color ? props.theme.colors.color : '#fff')};
   text-align: center;
   padding: 0 65px;
   &::before, &:: after {

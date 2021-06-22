@@ -31,7 +31,7 @@ const ImgBox = styled.div`
     right: 0;
     bottom: 0;
     transform: translate(95px, 25px);
-    background-color: ${(props) => props.theme.lightGreen};
+    background-color: ${(props) => props.theme.colors.lightGreen};
     .-reverse & {
       right: auto;
       left: 0;
