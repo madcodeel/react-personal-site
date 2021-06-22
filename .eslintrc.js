@@ -28,5 +28,6 @@ module.exports = {
     'react/prop-types': 'off',
     'global-require': 0,
     'max-len': 'off',
+    'no-nested-ternary': 'off',
   },
 };
